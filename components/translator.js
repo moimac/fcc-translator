@@ -40,19 +40,11 @@ class Translator {
     /// Titles
 
     Object.keys(allWords).forEach((key) => {
-      let logsome = false;
-      if (translated.toLowerCase().includes("goldberg")) {
-        logsome = true;
-      }
-      // console.log("indexof", lowerSource.indexOf(title), title);
       if (
         new RegExp(`${key} `, "gi").test(translated.toLowerCase()) ||
         new RegExp(` ${key}[^A-Za-z]`, "gi").test(translated.toLowerCase()) ||
         new RegExp(`${key}$`, "gi").test(translated.toLowerCase())
       ) {
-        if (logsome) {
-          console.log({ key, translated });
-        }
         const wordIndex = translated.toLowerCase().indexOf(key.toLowerCase());
         // if (wordIndex > -1) {
         if (
