@@ -20,7 +20,6 @@ module.exports = function (app) {
     } else if (locale === localeOptions[1]) {
       translation = translator.translateBtoA(text);
     }
-    console.log(translation);
     return res.send({ text, translation });
   });
 };
